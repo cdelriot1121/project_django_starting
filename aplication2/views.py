@@ -5,4 +5,5 @@ from django.http import HttpResponse
 # Create your views here.
 def Respuesta(request):
     path = request.path
-    return HttpResponse(path, content_type='text/html', charset='utf-8')
+    response = HttpResponse("Esta es una respuesta HttpResponse")
+    return response

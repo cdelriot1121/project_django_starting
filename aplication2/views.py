@@ -1,13 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib.auth import authenticate, login, logout
+from .forms import LoginForm, RegisterForm
+from django.contrib.auth.models import User
 
 
 # Create your views here.
-def Respuesta(request):
-    path = request.path
-    response = HttpResponse("Esta es una respuesta HttpResponse")
-    return response
-
 
 def bebidaItems(request, bebida):
     items = {
@@ -18,3 +16,33 @@ def bebidaItems(request, bebida):
     descripcion = items[bebida]
 
     return HttpResponse(f"<h2> {bebida} </h2>" + descripcion)
+
+
+
+def login_view(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+    else:
+        form = LoginForm()
+    return render(request, 'login.html', {'form': form})
+
+def register_view(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            user = User.objects.create_user(username, email, password)
+            user.save()
+            return redirect('login')
+    else:
+        form = RegisterForm()
+    return render(request, 'register.html', {'form': form})

@@ -4,21 +4,14 @@
 
 ## 🌟 Bienvenido a mi proyecto en desarrollo y aprendizaje en django
 
-Proyecto Django que está en sus primeras etapas de desarrollo 
+Proyecto Django que esta en sus primeras etapas de desarrollo O_o
 
-![Coding GIF](https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif)
-
-## 🛠️ Estado del Proyecto
-
-🚧 **En Construcción** 🚧
-
-xdd
 
 ## 🚀 Cómo empezar
 
 ### Prerrequisitos
 
-- Python 3.8+
+- Python 3.3+
 - pip
 - virtualenv (recomendado)
 
@@ -31,19 +24,26 @@ git clone https://github.com/tu-usuario/tu-proyecto.git
 2. Para crear y activar el entorno virtual por ejemplo (virtual_env):
 ```bash
 python -m venv virtual_env
-
-venv\Scripts\activate
 ```
 
-3. Puedes instalar tambien dependencias
+3. Recuerda tambien activar el entorno de desarrollo e instalar django ;D
+```
+venv\Scripts\activate
+```
+```
+pip install django
+```
+4. Puedes instalar tambien dependencias (opcional)
 ```bash
 pip install -r requirements.txt
 ```
-4. Aplicar migraciones
+
+5. Aplicar migraciones (opcional)
 ```
 python manage.py migrate
 ```
-5. Iniciar el proyecto en el entorno de desarrollo
+
+6. Iniciar el proyecto en el entorno de desarrollo
 ```
 python manage.py runserver
 ```

@@ -11,11 +11,10 @@ def login_view(request):
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
-            # Aquí deberías autenticar con tu modelo Usuario
-            # Sin embargo, esto implica escribir tu propia lógica de autenticación
+            
     else:
         form = LoginForm()
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'persona', {'form': form})
 
 def register_view(request):
     if request.method == 'POST':

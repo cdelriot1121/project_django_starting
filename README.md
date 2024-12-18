@@ -33,12 +33,12 @@ venv\Scripts\activate
 ```
 pip install django
 ```
-4. Puedes instalar tambien dependencias (opcional)
+4. Puedes instalar tambien dependencias (opcional) (este proyecto aun no tiene dependencias)
 ```bash
 pip install -r requirements.txt
 ```
 
-5. Aplicar migraciones (opcional)
+5. Aplicar migraciones (opcional) (mas tarde se deberia aclarar como funcionan las migraciones en un wiki del repositorio :D)
 ```
 python manage.py migrate
 ```

@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm, RegisterForm
-from .models import CustomUser
+from .models import Usuario
 
 def login_view(request):
     if request.method == 'POST':
@@ -11,10 +11,8 @@ def login_view(request):
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('persona')
+            # Aquí deberías autenticar con tu modelo Usuario
+            # Sin embargo, esto implica escribir tu propia lógica de autenticación
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
@@ -26,11 +24,13 @@ def register_view(request):
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-            user = CustomUser.objects.create_user(username, email, password)
+            user = Usuario.objects.create(username=username, email=email, password=password)
+            user.save()
             return redirect('login')
     else:
         form = RegisterForm()
     return render(request, 'register.html', {'form': form})
+
 
 
 def bebidaItems(request, bebida):

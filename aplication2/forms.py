@@ -1,6 +1,6 @@
 # aplication2/forms.py
 from django import forms
-from .models import CustomUser
+from .models import Usuario
 
 class LoginForm(forms.Form):
     username = forms.CharField(label='Username', max_length=100)

@@ -19,8 +19,9 @@ Proyecto Django que esta en sus primeras etapas de desarrollo O_o
 
 1. Clona el repositorio:
 ```bash
-git clone https://github.com/tu-usuario/tu-proyecto.git
+git clone https://github.com/cdelriot1121/project_django_starting.git
 ```
+Tambien puedes usar gh .-.
 2. Para crear y activar el entorno virtual por ejemplo (virtual_env):
 ```bash
 python -m venv virtual_env

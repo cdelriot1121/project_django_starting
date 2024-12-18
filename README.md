@@ -9,7 +9,7 @@ Proyecto Django que esta en sus primeras etapas de desarrollo O_o
 
 ## 🚀 Cómo empezar
 
-### Prerrequisitos
+### Prerrequisitos para usar django :D
 
 - Python 3.3+
 - pip
@@ -21,7 +21,11 @@ Proyecto Django que esta en sus primeras etapas de desarrollo O_o
 ```bash
 git clone https://github.com/cdelriot1121/project_django_starting.git
 ```
-Tambien puedes usar gh .-.
+Tambien puedes usar gh CLI .-.
+```
+gh repo clone cdelriot1121/project_django_starting
+```
+
 2. Para crear y activar el entorno virtual por ejemplo (virtual_env):
 ```bash
 python -m venv virtual_env

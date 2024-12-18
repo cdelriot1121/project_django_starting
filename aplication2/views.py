@@ -14,7 +14,7 @@ def login_view(request):
             
     else:
         form = LoginForm()
-    return render(request, 'persona', {'form': form})
+    return render(request, 'login.html', {'form': form})
 
 def register_view(request):
     if request.method == 'POST':

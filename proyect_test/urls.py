@@ -21,7 +21,6 @@ from aplication1 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.holaDjango, name= 'hola'),
-    path('persona', views.holaPersona, name = 'persona'),
     path('', include('aplication2.urls')),
+    path('', include('aplication1.urls'))
 ]

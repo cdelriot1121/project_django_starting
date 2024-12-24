@@ -6,4 +6,7 @@ class TestForm(forms.Form):
     correo = forms.EmailField(label='Correo electrónico')
     password = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
     edad = forms.IntegerField(label='Edad')
-    
+    rol = forms.ChoiceField(label='Rol', choices=[
+        ('administrador', 'Administrador'),
+        ('no_administrador', 'No administrador')
+    ])

@@ -20,4 +20,5 @@ def formulario(request):
 
 #otro request
 def about(request):
-    return render(request, "about.html")
+    about_content = {'about': 'This is the about page, how are you?, more content is this page' }
+    return render(request, "about.html", about_content)

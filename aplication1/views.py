@@ -18,3 +18,6 @@ def formulario(request):
         form = TestForm()
     return render(request, 'formulario.html', {'form': form})
 
+#otro request
+def about(request):
+    return render(request, "about.html")

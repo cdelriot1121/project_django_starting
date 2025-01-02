@@ -31,13 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'aplication1',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'aplication1', #mi primera aplication integrada
     'aplication2', #mi segunda aplication integrada
 ]
 
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'proyect_test.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'], #para que busque los templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

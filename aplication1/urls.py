@@ -7,4 +7,5 @@ urlpatterns = [
     path('', views.holaDjango, name= 'hola'),
     path('persona/', views.holaPersona, name = 'persona'),
     path('formulario/', views.formulario, name = 'formulario'),
+    path('about/', views.about, name = 'about'),
 ] 

@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from .forms import BookingForm
 from .models import Menu
+from django.utils.text import slugify
 
 # Create your views here.
 def home(request):
@@ -28,9 +29,12 @@ def menu(request):
     }
     return render(request, 'menu.html', main_data)
 
+
 def display_menu_item(request, pk=None):
     if pk:
-        menu_item = Menu.objects.get(pk=pk)
+        menu_item = Menu.objects.get(pk=pk) 
+        
     else:
         menu_item = ''
+
     return render(request, 'menu_item.html', {'menu_item': menu_item})

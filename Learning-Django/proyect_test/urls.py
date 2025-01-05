@@ -21,6 +21,6 @@ from aplication1 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('aplication2.urls')),
-    path('', include('aplication1.urls'))
+    path('', include('aplication2.urls')), # importa el path de la aplicacion2
+    path('', include('aplication1.urls')) #importa el path de la aplicacion1
 ]

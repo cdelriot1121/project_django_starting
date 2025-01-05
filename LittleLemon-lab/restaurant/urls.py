@@ -10,5 +10,5 @@ urlpatterns = [
     # añadiendo path de menu
     path('menu/', views.menu, name="menu"),
     #añadiendo menuitems
-    path('menu_item/<int:pk>/', views.display_menu_item, name="menu_item"),
+    path('menu_item/<int:pk>/', views.display_menu_item, name="menu_item"), #para que despliegue el contenido del menu cuanto de entre en el pk del platillo
 ]

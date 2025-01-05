@@ -28,13 +28,16 @@ def menu(request):
         "menu" : menu_data
     }
     return render(request, 'menu.html', main_data)
-
-
+    
 def display_menu_item(request, pk=None):
     if pk:
-        menu_item = Menu.objects.get(pk=pk) 
-        
+        menu_item = Menu.objects.get(pk=pk)
+        nombre_ret = slugify(menu_item.nombre)
     else:
         menu_item = ''
-
-    return render(request, 'menu_item.html', {'menu_item': menu_item})
+        nombre_ret = '' 
+    context = {
+        'menu_item': menu_item,
+        'nombre_ret': nombre_ret
+    }
+    return render(request, 'menu_item.html', context)
